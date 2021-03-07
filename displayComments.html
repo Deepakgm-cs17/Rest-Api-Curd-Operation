@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Comments</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h4 style="text-align: center; padding-top: 2%;">COMMENTS : <span id="id1"></span></h4>
+    <div class="container-fluid">
+        <div class="col-md">
+            <div class="display row"></div> 
+        </div>
+    </div>
+    <button href="" class= "btn-JSON">JSON</button>
+    <script>
+        let postId = sessionStorage.getItem("postId");
+         
+        document.getElementById("id1").innerHTML=postId;
+
+        const URL = 'https://jsonplaceholder.typicode.com/posts/';
+
+        let display = document.querySelector('.display');
+
+        fetch(URL + `${postId}/comments`)
+            .then(result => result.json())
+            .then(data => cardDisplay(data))
+
+
+        let output = '';
+        var tempVar = 1;
+        var dataVar = 1;
+        function cardDisplay(posts) {
+            posts.forEach(post => {
+                output += `
+            <div class="col-md-6" dataid=${dataVar++}>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: </h5><p>${post.name}</p>
+                        <h5 class="card-title">Email: </h5><p>${post.email}</p>
+                        <h5>Comment:</h5> 
+                        <p class="card-text">${post.body}</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            });
+            display.innerHTML = output;
+        }
+        let button = document.querySelector('.btn-JSON');
+
+        button.addEventListener('click', (clickId) => {
+            location.href = URL + `${postId}/comments`;
+        });
+        
+    </script>
+    
+</body>
+
+</html>

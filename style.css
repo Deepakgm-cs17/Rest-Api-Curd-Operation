@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+.container-fluid{
+    padding-top: 5%;
+}
+.row {
+    padding-bottom: 2%;
+}
+body {
+    background-image: url("background.jpg");
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h3,button,h5,a {
+    margin-top: 1rem;
+    color:#05386B;
+    font-family: 'Akaya Telivigala', cursive;
+}
+.button {
+    font-weight: 500;
+    background-color : #FF66C4;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+.form-group, button{
+    margin-bottom: 10px;
+    font-family: 'Crimson Text', serif;
+}
+
+.container{
+    width: 100%;
+}
+h4{
+    color: #05386B;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+input,textarea{
+    font-family: 'Roboto', sans-serif;
+}
+.card-body{
+    /* background-image: linear-gradient(120deg, #584d77 0%, #c88dbe 100%);*/
+    background: #ffff; 
+    background: linear-gradient(to right,#ffff, #ffc0cb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+p{
+    font-family: 'Dosis', sans-serif;
+}
+
+.card-btn , .btn-JSON{
+    background-color : #ffc0cb;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    
+}
+.card-btn:hover,.btn-JSON:hover {
+    background-color : #e9adb7;
+}
+.card:hover, .btn-JSON:hover{
+    transform-style: preserve-3d;
+    transform: scale(1.03);
+    transition: all ease 0.5s;
+    cursor:default;
+  }
+
+  .btn-JSON{
+      float:right;
+      margin-right: 2rem;
+  }
+
